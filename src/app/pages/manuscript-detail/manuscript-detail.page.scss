@@ -1,0 +1,145 @@
+ion-toolbar {
+  --background: var(--app-bg);
+}
+
+.detail-pad {
+  padding: 4px clamp(16px, 4.5vw, 28px) 40px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.status-chip.lg {
+  font-size: 12px;
+  padding: 6px 12px;
+
+  ion-icon {
+    font-size: 14px;
+  }
+}
+
+h1 {
+  font-size: clamp(19px, 5.5vw, 22px);
+  font-weight: 700;
+  color: var(--app-heading);
+  letter-spacing: -.01em;
+  line-height: 1.35;
+  margin: 14px 0 6px;
+}
+
+.meta {
+  font-size: 12.5px;
+  color: var(--app-muted-2);
+  margin: 0 0 18px;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  padding: 11px 13px;
+  margin-bottom: 22px;
+
+  ion-icon {
+    color: var(--app-accent);
+    font-size: 17px;
+    flex: 0 0 auto;
+  }
+
+  span {
+    font-size: 13px;
+    color: var(--app-heading);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.block {
+  margin-bottom: 20px;
+
+  h3 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--app-muted-2);
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--app-muted);
+    margin: 0;
+  }
+}
+
+.callout {
+  border-radius: var(--app-radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+
+  h3 {
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: var(--app-heading);
+  }
+
+  &.callout-info {
+    background: rgba(96, 165, 250, .08);
+    border: 1px solid rgba(96, 165, 250, .22);
+    h3 { color: var(--app-accent); }
+  }
+
+  &.callout-success {
+    background: rgba(34, 197, 94, .08);
+    border: 1px solid rgba(34, 197, 94, .22);
+    h3 { color: var(--ion-color-success); }
+  }
+
+  &.callout-warning {
+    background: rgba(245, 158, 11, .08);
+    border: 1px solid rgba(245, 158, 11, .24);
+    h3 { color: var(--ion-color-warning); }
+  }
+
+  &.callout-danger {
+    background: rgba(239, 68, 68, .08);
+    border: 1px solid rgba(239, 68, 68, .24);
+    h3 { color: var(--ion-color-danger); }
+  }
+}
+
+.resubmit-btn {
+  margin-top: 12px;
+  --background: linear-gradient(135deg, #60a5fa, #1d4ed8);
+  --color: #ffffff;
+  height: 48px;
+  font-weight: 700;
+  font-size: 14.5px;
+  text-transform: none;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 22px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-muted-2);
+  text-decoration: none;
+
+  ion-icon {
+    font-size: 16px;
+  }
+
+  &:active {
+    color: var(--app-accent);
+  }
+}

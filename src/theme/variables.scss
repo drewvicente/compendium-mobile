@@ -1,0 +1,99 @@
+// ============================================================
+// The Compendium — Mobile theme
+// Carries the web app's established brand (dark navy background,
+// blue accent, DM Sans) onto Ionic's CSS custom properties so every
+// stock Ionic component (buttons, tab bar, toolbar, items…) picks
+// it up automatically with no per-component overrides needed.
+// ============================================================
+
+:root {
+  // ---- Brand accent (blue) ----
+  --ion-color-primary: #1d4ed8;
+  --ion-color-primary-rgb: 29, 78, 216;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #1a45be;
+  --ion-color-primary-tint: #3460dc;
+
+  --ion-color-secondary: #60a5fa;
+  --ion-color-secondary-rgb: 96, 165, 250;
+  --ion-color-secondary-contrast: #040810;
+  --ion-color-secondary-contrast-rgb: 4, 8, 16;
+  --ion-color-secondary-shade: #5492dc;
+  --ion-color-secondary-tint: #70aefb;
+
+  // ---- Status colors (kept semantic — not re-themed to blue) ----
+  --ion-color-success: #22c55e;
+  --ion-color-success-rgb: 34, 197, 94;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #1ead53;
+  --ion-color-success-tint: #38ca6f;
+
+  --ion-color-warning: #f59e0b;
+  --ion-color-warning-rgb: 245, 158, 11;
+  --ion-color-warning-contrast: #1a1300;
+  --ion-color-warning-contrast-rgb: 26, 19, 0;
+  --ion-color-warning-shade: #d88b0a;
+  --ion-color-warning-tint: #f6a823;
+
+  --ion-color-danger: #ef4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d23c3c;
+  --ion-color-danger-tint: #f15757;
+
+  --ion-color-medium: #3d5a80;
+  --ion-color-medium-rgb: 61, 90, 128;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #364f70;
+  --ion-color-medium-tint: #516b8c;
+
+  --ion-color-light: #0f1e38;
+  --ion-color-light-rgb: 15, 30, 56;
+  --ion-color-light-contrast: #eff6ff;
+  --ion-color-light-contrast-rgb: 239, 246, 255;
+  --ion-color-light-shade: #0d1a31;
+  --ion-color-light-tint: #27354c;
+
+  --ion-color-dark: #eff6ff;
+  --ion-color-dark-rgb: 239, 246, 255;
+  --ion-color-dark-contrast: #040810;
+  --ion-color-dark-contrast-rgb: 4, 8, 16;
+  --ion-color-dark-shade: #d2d8e0;
+  --ion-color-dark-tint: #f1f7ff;
+
+  // ---- App-wide surfaces (always-dark brand, not OS-dependent) ----
+  --ion-background-color: #040810;
+  --ion-background-color-rgb: 4, 8, 16;
+  --ion-text-color: #eff6ff;
+  --ion-text-color-rgb: 239, 246, 255;
+
+  --ion-toolbar-background: #040a18;
+  --ion-toolbar-border-color: #0f1e38;
+  --ion-tab-bar-background: #040a18;
+  --ion-tab-bar-border-color: #0f1e38;
+  --ion-item-background: #0a1220;
+  --ion-card-background: #0a1220;
+
+  --ion-border-color: #0f1e38;
+
+  --ion-font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  // ---- Custom app tokens (used directly in our page SCSS) ----
+  --app-bg: #040810;
+  --app-surface: #0a1220;
+  --app-surface-raised: #0e1830;
+  --app-border: #16233f;
+  --app-muted: #7d93b8;
+  --app-muted-2: #3d5a80;
+  --app-heading: #eff6ff;
+  --app-accent: #60a5fa;
+  --app-accent-strong: #1d4ed8;
+  --app-radius: 16px;
+  --app-radius-sm: 10px;
+  --app-safe-top: env(safe-area-inset-top, 0px);
+  --app-safe-bottom: env(safe-area-inset-bottom, 0px);
+}

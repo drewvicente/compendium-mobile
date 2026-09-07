@@ -1,0 +1,101 @@
+@use "./theme/variables.scss";
+
+/* Core Ionic CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  background: var(--app-bg);
+  font-family: var(--ion-font-family);
+}
+
+ion-content {
+  --background: var(--app-bg);
+}
+
+ion-toolbar {
+  --color: var(--app-heading);
+}
+
+// Shared, reusable building blocks used across pages
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--app-accent);
+  margin: 0 0 6px;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--app-accent);
+    flex: 0 0 auto;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--app-muted);
+
+  ion-icon {
+    font-size: 40px;
+    color: var(--app-muted-2);
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--app-heading);
+    margin: 0 0 6px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+
+  &.status-submitted { color: #60a5fa; background: rgba(96, 165, 250, .14); }
+  &.status-approved_faculty { color: #38bdf8; background: rgba(56, 189, 248, .14); }
+  &.status-published { color: #22c55e; background: rgba(34, 197, 94, .14); }
+  &.status-revision_required,
+  &.status-revision_edited { color: #f59e0b; background: rgba(245, 158, 11, .14); }
+  &.status-denied { color: #ef4444; background: rgba(239, 68, 68, .14); }
+}

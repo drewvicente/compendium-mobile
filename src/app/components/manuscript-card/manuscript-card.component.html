@@ -1,0 +1,14 @@
+<a class="ms-card" [routerLink]="['/app/manuscripts', manuscript.id]">
+  <div class="ms-icon">
+    <ion-icon [name]="statusIcon[manuscript.status]"></ion-icon>
+  </div>
+  <div class="ms-body">
+    <h4>{{ manuscript.title }}</h4>
+    <p class="ms-abstract">{{ manuscript.abstract }}</p>
+    <div class="ms-foot">
+      <app-status-chip [status]="manuscript.status"></app-status-chip>
+      <span class="ms-date">{{ manuscript.submittedAt | date: 'MMM d' }}</span>
+    </div>
+  </div>
+  <ion-icon name="chevron-forward-outline" class="ms-chevron"></ion-icon>
+</a>

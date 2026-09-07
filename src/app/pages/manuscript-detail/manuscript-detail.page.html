@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/app/manuscripts" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Submission Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (!manuscript) {
+    <div class="empty-state">
+      <ion-icon name="documents-outline"></ion-icon>
+      <h3>Manuscript not found</h3>
+      <p>It may have been removed. Go back to your list.</p>
+    </div>
+  } @else {
+    <div class="detail-pad">
+      <app-status-chip [status]="manuscript.status" [large]="true"></app-status-chip>
+
+      <h1>{{ manuscript.title }}</h1>
+      <p class="meta">{{ manuscript.author }} &middot; {{ manuscript.submittedAt | date: 'MMM d, y' }}</p>
+
+      <div class="file-row">
+        <ion-icon name="document-text-outline"></ion-icon>
+        <span>{{ manuscript.fileName }}</span>
+      </div>
+
+      <section class="block">
+        <h3>Abstract</h3>
+        <p>{{ manuscript.abstract }}</p>
+      </section>
+
+      <section class="block">
+        <h3>Keywords</h3>
+        <p>{{ manuscript.keywords }}</p>
+      </section>
+
+      @if (manuscript.facultyRemarks) {
+        <section class="block callout callout-info">
+          <h3>Faculty Remarks</h3>
+          <p>{{ manuscript.facultyRemarks }}</p>
+        </section>
+      }
+
+      @if (manuscript.headRemarks) {
+        <section class="block callout callout-success">
+          <h3>Research Head Remarks</h3>
+          <p>{{ manuscript.headRemarks }}</p>
+        </section>
+      }
+
+      @if (manuscript.revisionReason) {
+        <section class="block callout callout-warning">
+          <h3>Revision Requested</h3>
+          <p>{{ manuscript.revisionReason }}</p>
+        </section>
+      }
+
+      @if (manuscript.denyReason) {
+        <section class="block callout callout-danger">
+          <h3>Reason for Denial</h3>
+          <p>{{ manuscript.denyReason }}</p>
+        </section>
+      }
+
+      @if (manuscript.status === 'revision_required') {
+        <ion-button expand="block" shape="round" class="resubmit-btn" (click)="resubmit()">
+          <ion-icon slot="start" name="sync-outline"></ion-icon>
+          Mark as Revised &amp; Resubmit
+        </ion-button>
+      }
+
+      <a class="back-link" routerLink="/app/manuscripts">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        Back to all manuscripts
+      </a>
+    </div>
+  }
+</ion-content>

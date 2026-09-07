@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      My Manuscripts
+      @if (user(); as u) {
+        <span class="hi">Hi, {{ u.firstName }}</span>
+      }
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" aria-label="Log out">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="segment-toolbar">
+    <ion-segment [value]="filter()" (ionChange)="onFilterChange($event)" scrollable>
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="pending">
+        <ion-label>In Review</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="revision">
+        <ion-label>Revision</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="published">
+        <ion-label>Published</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="page-pad">
+    @if (filtered().length === 0) {
+      <div class="empty-state">
+        <ion-icon name="documents-outline"></ion-icon>
+        <h3>No manuscripts here</h3>
+        <p>Nothing matches this filter yet.</p>
+      </div>
+    } @else {
+      <div class="ms-list">
+        @for (m of filtered(); track m.id) {
+          <app-manuscript-card [manuscript]="m"></app-manuscript-card>
+        }
+      </div>
+    }
+  </div>
+</ion-content>
